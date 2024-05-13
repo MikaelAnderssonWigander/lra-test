@@ -10,15 +10,9 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 @ApplicationScoped
 public class CamelRoute extends EndpointRouteBuilder {
 
-    @ConfigProperty(name = "camel.service.lra.coordinator-url")
-    String coordinatorUrl;
-
-    @ConfigProperty(name = "camel.service.lra.local-participant-url")
-    String localParticipantUrl;
-
     @Override
     public void configure() throws Exception {
-        getCamelContext().addService(new InMemorySagaService());
+//        getCamelContext().addService(new InMemorySagaService());
 
 //        final LRASagaService lraSagaService = new LRASagaService();
 //        lraSagaService.setLocalParticipantUrl(localParticipantUrl);
