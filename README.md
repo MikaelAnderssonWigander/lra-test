@@ -11,7 +11,7 @@ is not triggered, run again.
 For this test you need Docker and the following container running:
 
 ```bash
-docker run -p 8180:8080 quay.io/jbosstm/lra-coordinator:latest
+docker run --network host -e QUARKUS_HTTP_PORT=8180 quay.io/jbosstm/lra-coordinator:latest
 ```
 
 In the ```CamelRouter.java``` swap between the ```InMemorySagaService``` and the ```LRAService``` to see the difference.
